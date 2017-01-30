@@ -1,7 +1,7 @@
 {
   "name": "SPA-test",
   "version": "1.0.0",
-  "description": "Single Page App test",
+  "description": "Single Page Application test",
   "main": "index.js",
   "repository": "https://github.com/dentov13/SPA-test.git",
   "author": "dentov13 <tovstokhatko.denis@gmail.com>",
