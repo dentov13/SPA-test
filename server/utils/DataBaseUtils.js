@@ -1,4 +1,3 @@
-// utils
 import mongoose from 'mongoose';
 import '../models/Note';
 
