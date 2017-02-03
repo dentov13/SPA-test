@@ -13,11 +13,11 @@ app.get('/notes', (req, res) => {
 });
 
 app.post('/notes', (req, res) => {
-  res.send('Hey, sup!');
+  db.createNote(req.body).then(data => res.send(data));
 });
 
 app.delete('/notes/:id', (req, res) => {
-  res.send('Hey, sup!');
+  db.deleteNote(req.params.id).then(data => res.send(data));
 });
 
 const server = app.listen(8080, () => {
