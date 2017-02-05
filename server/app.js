@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import { servePort } from '../etc/config.json';
+import { serverPort } from '../etc/config.json';
 
 import * as db from './utils/DataBaseUtils.js';
 
@@ -23,6 +23,6 @@ app.delete('/notes/:id', (req, res) => {
   db.deleteNote(req.params.id).then(data => res.send(data));
 });
 
-const server = app.listen(servePort, () => {
-  console.log(`Server is UP on port ${servePort}`);
+const server = app.listen(serverPort, () => {
+  console.log(`Server is UP on port ${serverPort}`);
 });

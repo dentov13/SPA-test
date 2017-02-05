@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
-import '../models/Note';
 import config from '../../etc/config.json'
+import '../models/Note';
 
 const Note = mongoose.model('Note');
 
 export function setUpConnection() {
-  mongoose.connect(`mongodb://localhost/notes`);
+  mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
 }
 
-export function listNotes() {
+export function listNotes(id) {
   return Note.find();
 }
 
