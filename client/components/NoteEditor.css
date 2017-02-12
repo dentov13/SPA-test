@@ -17,10 +17,9 @@
   font-size: 14px;
   border: none;
   font-weight: 300;
-
-  &:focus {
-    outline: none;
-  }
+}
+.NoteEditor__text:focus {
+  outline: none;
 }
 
 .NoteEditor__title {
@@ -30,10 +29,9 @@
   margin: 5px;
   border: none;
   font-weight: 500;
-
-  &:focus {
-    outline: 0;
-  }
+}
+.NoteEditor__title:focus {
+  outline: 0;
 }
 
 .NoteEditor__footer {
@@ -61,19 +59,18 @@
   transition: all 100ms ease-in-out;
   background: #3ac569;
   color: white;
+}
+.NoteEditor__button:hover {
+  opacity: .9;
+  transition: all 100ms ease;
+}
 
-  &:hover {
-    opacity: .9;
-    transition: all 100ms ease;
-  }
+.NoteEditor__button:active {
+  opacity: .75;
+  transform: scale(.97);
+  transition: all 100ms ease;
+}
 
-  &:active {
-    opacity: .75;
-    transform: scale(.97);
-    transition: all 100ms ease;
-  }
-
-  &:focus {
-    outline: 0;
-  }
+.NoteEditor__button:focus {
+  outline: 0;
 }

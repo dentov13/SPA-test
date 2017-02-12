@@ -22,7 +22,7 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^3.2.0",
+    "autoprefixer-loader": "latest",
     "babel": "latest",
     "babel-loader": "latest",
     "css-loader": "latest",

@@ -3,6 +3,8 @@ import React from 'react';
 import NoteEditor from './NoteEditor.jsx';
 import NotesGrid from './NotesGrid.jsx';
 
+import './App.css';
+
 const App = React.createClass({
   handleNoteAdd(data) {
     console.log(data);

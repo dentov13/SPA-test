@@ -1,5 +1,5 @@
 import React from 'react';
-import './NoteEditor.less';
+import './NoteEditor.css';
 
 const NoteEditor = React.createClass({
   getInitialState() {
@@ -13,10 +13,10 @@ const NoteEditor = React.createClass({
     this.setState({ text: e.target.value });
   },
   handleTitleChange(e) {
-    this.SetState({ title: e.target.value });
+    this.setState({ title: e.target.value });
   },
   handleNoteAdd() {
-    const newNode = {
+    const newNote = {
       title: this.state.title,
       text: this.state.text,
       color: this.state.color
@@ -27,9 +27,9 @@ const NoteEditor = React.createClass({
   },
   render() {
     return (
-      <div class='NoteEditor'>
+      <div className='NoteEditor'>
         <input
-          text='text'
+          type='text'
           className='NoteEditor__title'
           placeholder='Enter title'
           value={this.state.title}
