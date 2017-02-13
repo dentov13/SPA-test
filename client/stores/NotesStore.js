@@ -1,4 +1,4 @@
-import { EventEmmiter } from 'events';
+import { EventEmitter } from 'events';
 
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
@@ -13,13 +13,13 @@ function formatNote(note) {
   return {
     id: note._id,
     title: note.title,
-    text: note.textб
+    text: note.text,
     color: note.color || '#ffffff',
     createdAt: note.createdAt
   };
 }
 
-const TasksStore = Object.assign({}, EventEmmiter.prototype, {
+const TasksStore = Object.assign({}, EventEmitter.prototype, {
   isLoading() {
     return _isLoading;
   },
@@ -32,19 +32,21 @@ const TasksStore = Object.assign({}, EventEmmiter.prototype, {
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeCHangeListener: function(callback) {
+  removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
 });
 
 AppDispatcher.register(function(action) {
-  switch (action.type) {
+  switch(action.type) {
+
     case AppConstants.LOAD_NOTES_REQUEST: {
       _isLoading = true;
 
       TasksStore.emitChange();
       break;
     }
+
     case AppConstants.LOAD_NOTES_SUCCESS: {
       _isLoading = false;
       _notes = action.notes.map(formatNote);
@@ -53,6 +55,7 @@ AppDispatcher.register(function(action) {
       TasksStore.emitChange();
       break;
     }
+
     case AppConstants.LOAD_NOTES_FAIL: {
       _loadingError = action.error;
 
@@ -61,7 +64,7 @@ AppDispatcher.register(function(action) {
     }
 
     default: {
-      console.console.log('No such handler');
+      console.log('No such handler');
     }
   }
 });

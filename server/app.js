@@ -23,6 +23,6 @@ app.delete('/notes/:id', (req, res) => {
   db.deleteNote(req.params.id).then(data => res.send(data));
 });
 
-const server = app.listen(serverPort, () => {
+const server = app.listen(serverPort, function() {
   console.log(`Server is UP on port ${serverPort}`);
 });
