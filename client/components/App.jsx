@@ -39,7 +39,10 @@ const App = React.createClass({
       <div className='App'>
         <h1 className='App__header'>Notes App</h1>
         <NoteEditor onNoteAdd={this.handleNoteAdd}/>
-        <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete} />
+        <NotesGrid
+          notes={this.state.notes}
+          onNoteDelete={this.handleNoteDelete}
+        />
       </div>
     );
   },
